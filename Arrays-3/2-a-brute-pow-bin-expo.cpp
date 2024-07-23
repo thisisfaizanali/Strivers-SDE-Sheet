@@ -5,6 +5,7 @@ public:
     {
         // brute force approach
         // will give tle
+        // check for -integer n also
         long long nn = n;
         if (nn < 0)
             nn = -1 * n;
