@@ -5,6 +5,7 @@ using ll = long long;
 #define pb push_back
 #define eb emplace_back
 #define all(p) p.begin(), p.end()
+#define idx size_t
 // to reduce performance degradation due to hash collisions
 struct custom_hash
 {
