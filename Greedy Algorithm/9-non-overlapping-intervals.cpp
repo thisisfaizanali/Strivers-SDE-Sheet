@@ -8,24 +8,24 @@ class Solution
 public:
     int eraseOverlapIntervals(vector<vector<int>> &intervals)
     {
-        // similar to n meetings in one room
-        //  min no of intervals to remove to make the rest non-overlapping
+        // ans = num of overlapping intervals
+        // given ques just use b>c condition and else update end
         int n = intervals.size();
-        // let us find out the number of non-overlapping intervals
+        int count = 0;
         sort(intervals.begin(), intervals.end(), [](vector<int> &a, vector<int> &b)
              { return a[1] < b[1]; });
-        // sorted in increasing order of end times
-        int count = 1; // no of overlapping intervals
-        int lastend = intervals[0][1];
+        int end = intervals[0][1]; // end of first interval
         for (int i = 1; i < n; ++i)
         {
-            if (intervals[i][0] >= lastend) // non overlap condition; a>d
+            if (intervals[i][0] < end)
             {
                 count++;
-                lastend = intervals[i][1];
+            }
+            else
+            {
+                end = intervals[i][1];
             }
         }
-        // ans = total - non-overlapping count
-        return n - count;
+        return count;
     }
 };
