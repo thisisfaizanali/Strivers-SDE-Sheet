@@ -13,7 +13,8 @@ public:
     }
     int next(int price)
     {
-        // read the question many times : pge concept
+        // montonically decreasing stack
+        //  read the question many times : pge concept
         int span = 1; // for including the current element
         while (!st.empty() && st.top().first <= price)
         {
