@@ -31,7 +31,6 @@ This repository is organized into different folders based on topics, where each 
 
 Each solution is named after the problem it solves:
 
-```
 Arrays-1/
 ├── problem_name.cpp
 
@@ -42,16 +41,17 @@ This makes it easy to navigate and find solutions.
 - **Template 1** - For contests
 - **Template 2** - For contests
 - **Template 3** - For practice
-```
 
 ## 🔧 How to Use
 
-```
 1. Clone the repository:
+
+```
    git clone https://github.com/thisisfaizanali/Strivers-SDE-Sheet-2024.git
+```
+
 2. Navigate to the required topic folder.
 3. Open the `.cpp` file to check the solution.
-```
 
 ## 💡 Contributions
 
