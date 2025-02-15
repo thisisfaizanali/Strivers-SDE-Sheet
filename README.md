@@ -14,9 +14,17 @@ This repository is organized into different folders based on topics, where each 
   - Arrays - 3
   - Arrays - 4
 - **Linked Lists**
+  - LinkedList - 1
+  - LinkedList - 2
+  - LinkedList and Arrays
 - **Stacks & Queues**
-- **Recursion & Backtracking**
-- **Binary Search & Sorting**
+  - Stack and Queue - 1
+  - Stack and Queue - 2
+  - **Extra**
+- **Recursion**
+  - **Backtracking**
+  - **Subsequences Pattern**
+- **Binary Search**
 - **Greedy Algorithms**
 
 ### 🚧 Pending Topics:
