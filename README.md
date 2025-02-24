@@ -55,7 +55,7 @@ This makes it easy to navigate and find solutions.
 1. Clone the repository:
 
 ```
-   git clone https://github.com/thisisfaizanali/Strivers-SDE-Sheet-2024.git
+git clone https://github.com/thisisfaizanali/Strivers-SDE-Sheet.git
 ```
 
 2. Navigate to the required topic folder.
