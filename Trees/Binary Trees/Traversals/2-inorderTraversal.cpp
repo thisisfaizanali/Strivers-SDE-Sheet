@@ -17,7 +17,8 @@ class Solution
 public:
     vector<int> inorderTraversal(TreeNode *root)
     {
-        // left,root,right -> this formula on subtrees
+        // using recursion
+        //  left,root,right -> this formula on subtrees
         vector<int> ans;
         inorderHelper(root, ans);
         return ans;
