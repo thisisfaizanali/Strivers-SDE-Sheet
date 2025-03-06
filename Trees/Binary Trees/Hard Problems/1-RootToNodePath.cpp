@@ -15,6 +15,7 @@ class Solution
 public:
     vector<int> rootToNodePath(TreeNode *root, int target)
     {
+        // backtracking + bool + ds + preorder
         vector<int> ans;
         getPath(root, target, ans);
         return ans;
