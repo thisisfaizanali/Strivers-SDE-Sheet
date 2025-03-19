@@ -17,19 +17,27 @@ This repository is organized into different folders based on topics, where each 
   - LinkedList - 1
   - LinkedList - 2
   - LinkedList and Arrays
+- **Greedy Algorithms**
+- **Recursion**
+  - Backtracking
+  - Subsequences Pattern
+- **Binary Search**
+  - BS on 1D - Arrays
+  - BS on Answers
+  - BS on 2D - Arrays
 - **Stacks & Queues**
   - Stack and Queue - 1
   - Stack and Queue - 2
-  - **Extra**
-- **Recursion**
-  - **Backtracking**
-  - **Subsequences Pattern**
-- **Binary Search**
-- **Greedy Algorithms**
+  - Extra Questions
+- **Trees**
+  - **Binary Trees**
+    - Traversals
+    - Medium Problems
+    - Hard Problems
+  - **BST or Binary Search Trees**
 
 ### 🚧 Pending Topics:
 
-- **Trees**
 - **Heaps**
 - **Strings**
 - **Graphs**
