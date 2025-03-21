@@ -15,7 +15,7 @@ class Solution
 public:
     TreeNode *build(vector<int> &preorder, int &index, int bound)
     {
-        if (index > preorder.size() || preorder[index] > bound)
+        if (index >= preorder.size() || preorder[index] > bound)
             return nullptr;
         // Create the root node :
         TreeNode *root = new TreeNode(preorder[index++]);
