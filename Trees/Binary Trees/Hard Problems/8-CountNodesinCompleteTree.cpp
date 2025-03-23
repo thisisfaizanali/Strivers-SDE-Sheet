@@ -40,6 +40,7 @@ public:
             return 0;
         int leftSubtreeHeight = leftHeight(root);
         int rightSubtreeHeight = rightHeight(root);
+        // CBT property:
         if (leftSubtreeHeight == rightSubtreeHeight)
             return (1 << leftSubtreeHeight) - 1;
         else
