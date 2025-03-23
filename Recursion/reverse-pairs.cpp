@@ -18,6 +18,7 @@ public:
             {
                 j++;
             }
+            // not inclusive unlike count inversions
             count += j - (mid + 1);
         }
         while (left <= mid && right <= high)
