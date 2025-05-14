@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 static auto _ = []()
-{ios::sync_with_stdio(false); cin.tie(nullptr); return nullptr; }();
+{ ios::sync_with_stdio(false); cin.tie(nullptr); return nullptr; }();
 struct TreeNode
 {
     int val;
@@ -17,25 +17,25 @@ class Solution
 public:
     vector<int> postorderTraversal(TreeNode *root)
     {
-        // use two stacks and their lifo nature
         vector<int> ans;
         if (!root)
             return ans;
         stack<TreeNode *> st1, st2;
         st1.push(root);
-        // Push in first stack as : root left right
-        //  Processing order bottom to top is : root right left
+        // st1 simulates modified preorder traversal: root -> right -> left
+        // This is achieved by pushing left before right (because stack is LIFO)
         while (!st1.empty())
         {
             root = st1.top();
             st1.pop();
-            if (root->left)
+            st2.push(root); // root is visited before its children
+            if (root->left) // left is pushed first
                 st1.push(root->left);
-            if (root->right)
+            if (root->right) // right is pushed after left, so it is processed first
                 st1.push(root->right);
-            st2.push(root);
         }
-        // Processing order top to bottom is : left right root
+        // st2 contains nodes in reverse postorder: root → right → left
+        // Reversing this by popping gives: left → right → root (i.e., postorder)
         while (!st2.empty())
         {
             ans.push_back(st2.top()->val);
