@@ -26,6 +26,7 @@ public:
                 root = root->right;
             // else we have the split point which is our answer :
             else
+                // covers : nodes deiverge + both are same nodes + one node is equal to the root
                 return root;
         }
         return nullptr;
