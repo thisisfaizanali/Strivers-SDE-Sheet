@@ -18,9 +18,9 @@ private:
     bool reverse; // Flag (false = inorder, true = reverse inorder)
 public:
     // Constructor initializes the iterator and pushes nodes of the given direction
-    BSTiterator(TreeNode *root, bool isReverse)
+    BSTiterator(TreeNode *root, bool flag)
     {
-        reverse = isReverse;
+        reverse = flag;
         pushNodes(root);
     }
     // Returns the next element in the traversal order
