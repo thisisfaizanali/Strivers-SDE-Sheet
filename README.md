@@ -54,9 +54,8 @@ This makes it easy to navigate and find solutions.
 
 ## 📜 LeetCode Templates
 
-- **Template 1** - For contests
-- **Template 2** - For contests
-- **Template 3** - For practice
+- **template1.cpp** - For contests
+- **trees.cpp** - For trees
 
 ## 🔧 How to Use
 
