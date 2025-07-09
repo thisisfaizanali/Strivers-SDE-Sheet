@@ -11,6 +11,11 @@ public:
     {
         int n = dist.size();
 
+        // Ensure self-distance is 0 for all nodes (IMPORTANT)
+        for (int i = 0; i < n; ++i)
+        {
+            dist[i][i] = 0;
+        }
         // Try every node k as an intermediate node
         for (int k = 0; k < n; ++k)
         {
