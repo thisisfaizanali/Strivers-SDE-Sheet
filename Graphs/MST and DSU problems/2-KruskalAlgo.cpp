@@ -90,7 +90,7 @@ public:
     {
         int ans = 0;
 
-        // first make edges tuple  : {weight,{u,v}} :
+        // I need edges for DSU first :
         vector<pair<int, pair<int, int>>> edges;
         for (int i = 0; i < V; ++i)
         {
