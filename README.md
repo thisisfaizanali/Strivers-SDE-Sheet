@@ -35,12 +35,13 @@ This repository is organized into different folders based on topics, where each 
     - Medium Problems
     - Hard Problems
   - **BST or Binary Search Trees**
+- **Graphs** -**Problems on BFS and DFS** -**Shortest Path Algorithms and Problems** -**Topological Sort and Problems** -**MST and DSU Problems** -**Kosaraju's Algo for SCC & Tarjan's Algo for Bridges and Articulation Points**
 
 ### 🚧 Pending Topics:
 
 - **Heaps**
 - **Strings**
-- **Graphs**
+- **Tries**
 - **Dynamic Programming (DP)**
 
 ## 📑 File Naming Convention
