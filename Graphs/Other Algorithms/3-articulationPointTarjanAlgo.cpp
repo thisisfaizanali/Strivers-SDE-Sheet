@@ -8,7 +8,7 @@ private:
     int timer = 1; // Global timer to assign discovery times (tin)
 
     void dfs(int node, int parent, vector<int> &vis, vector<int> &tin,
-             vector<int> &low, vector<vector<int>> &adj, vector<int> &mark)
+             vector<int> &low, vector<int> adj[], vector<int> &mark)
     {
         vis[node] = 1;
         tin[node] = low[node] = timer++; // Set discovery and low time
@@ -48,7 +48,7 @@ private:
 public:
     // Uses Tarjan Algo :
     // AP : nodes when removed produce more components :
-    vector<int> articulationPoints(int V, vector<vector<int>> &adj)
+    vector<int> articulationPoints(int V, vector<int> adj[])
     {
         vector<int> vis(V, 0), tin(V, 0), low(V, 0);
         vector<int> mark(V, 0); // contains nodes marked as articulation points
