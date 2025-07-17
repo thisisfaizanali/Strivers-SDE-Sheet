@@ -5,13 +5,12 @@ using namespace std;
 // Disjoint Set (Union-Find) Data Structure with Union by Rank and Union by Size
 class DisjointSet
 {
+public:
     // Vectors to store:
     // - rank: for union by rank optimization
     // - parent: to store the parent of each node
     // - size: for union by size optimization
     vector<int> rank, parent, size;
-
-public:
     // Constructor: Initializes the DSU for 'n' elements (1-based indexing)
     DisjointSet(int n)
     {
