@@ -48,8 +48,9 @@ public:
 
             for (auto &neighbour : adj[node])
             {
-                indegree[neighbour]--; // remove the contribution of node on neighbour
-                // because it is already placed in ans
+                // remove the contribution of node on neighbour :
+                // "node is done, so any adjacent node that needed node no longer needs it."
+                indegree[neighbour]--;
 
                 if (indegree[neighbour] == 0)
                 {
