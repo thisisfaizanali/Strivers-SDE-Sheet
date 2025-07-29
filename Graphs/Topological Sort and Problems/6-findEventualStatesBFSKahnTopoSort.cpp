@@ -7,15 +7,11 @@ class Solution
 public:
     vector<int> eventualSafeNodes(vector<vector<int>> &graph)
     {
+        // safe nodes : those whose all paths lead to a terminal node :
+        // So all nodes which are not a part of a cycle will get terminated :
+        // i will use kahn topo method but first reverse the edges :
+        // so nodes with outdegree now becomes nodes with indegree : so Kahn's algo can be used
         // this question : basically cycle detection approach for DG :
-        // for BFS version : we can use Kahn's algo for Topological Sorting :
-
-        // Here terminal nodes have 0 outdegree but
-        // Kahn is concerned with 0 indegree
-        // so we have to reverse the edges (reverse the graph)
-
-        // Terminal nodes are those with indegree 0 because of reversal of edges
-
         int n = graph.size();
 
         vector<vector<int>> revGraph(n);
@@ -40,14 +36,15 @@ public:
             }
         }
 
+        // Nodes in a cycle (or pointing to a cycle) will never reach indegree 0 in the reversed graph.
         vector<int> topo; // these will contain safe nodes
-                          // so we don't need extra safe node array :
 
         while (!q.empty())
         {
             int node = q.front();
             q.pop();
 
+            // Nodes in a cycle (or pointing to a cycle) will never reach indegree 0 in the reversed graph.
             topo.push_back(node);
 
             for (auto &neighbour : revGraph[node])
