@@ -1,24 +1,21 @@
-/*++++++++++++++++++++++++++++++++++++++++++++++++++++++  Bismillah  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++  Bismillah
+ * ++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution
-{
-public:
+class Solution {
+   public:
     // Recursive + Memoization
     // Time: O(n*k), Space: O(n) + O(n) recursion stack
-    int minCostMemo(int idx, vector<int> &height, int k, vector<int> &dp)
-    {
+    int minCostMemo(int idx, vector<int> &height, int k, vector<int> &dp) {
         if (idx == 0)
-            return 0; // base case: no cost at start
+            return 0;  // base case: no cost at start
         if (dp[idx] != -1)
             return dp[idx];
 
         int minCost = INT_MAX;
-        for (int j = 1; j <= k; j++)
-        {
-            if (idx - j >= 0)
-            {
+        for (int j = 1; j <= k; j++) {
+            if (idx - j >= 0) {
                 int cost = minCostMemo(idx - j, height, k, dp) + abs(height[idx] - height[idx - j]);
                 minCost = min(minCost, cost);
             }
@@ -28,18 +25,14 @@ public:
 
     // Tabulation (Bottom-Up)
     // Time: O(n*k), Space: O(n)
-    int minCostTab(vector<int> &height, int k)
-    {
+    int minCostTab(vector<int> &height, int k) {
         int n = height.size();
         vector<int> dp(n, INT_MAX);
-        dp[0] = 0; // starting point
+        dp[0] = 0;  // starting point
 
-        for (int i = 1; i < n; i++)
-        {
-            for (int j = 1; j <= k; j++)
-            {
-                if (i - j >= 0)
-                {
+        for (int i = 1; i < n; i++) {
+            for (int j = 1; j <= k; j++) {
+                if (i - j >= 0) {
                     dp[i] = min(dp[i], dp[i - j] + abs(height[i] - height[i - j]));
                 }
             }
