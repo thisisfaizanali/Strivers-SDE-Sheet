@@ -46,7 +46,9 @@ public:
         for (int i = 0; i < n; ++i)
             dp[i][0] = true; // base case: sum 0 can always be formed
 
-        dp[0][arr[0]] = true; // base case: first element can form its own value
+        // without if wil lead to out of bounds errro : if arr[0] > sum :
+        if (arr[0] <= sum)
+            dp[0][arr[0]] = true; // base case: first element alone can form its own value (if within sum)
 
         // fill the table
         for (int i = 1; i < n; ++i)
@@ -78,6 +80,10 @@ public:
         vector<bool> prev(sum + 1, 0), curr(sum + 1, 0);
 
         prev[0] = curr[0] = true; // sum 0 is always possible
+
+        // without if wil lead to out of bounds errro : if arr[0] > sum :
+        if (arr[0] <= sum)
+            prev[arr[0]] = true; // base case: first element alone can form its own value (if within sum)
 
         for (int i = 1; i < n; ++i)
         {
