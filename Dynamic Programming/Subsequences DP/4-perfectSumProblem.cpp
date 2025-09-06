@@ -58,7 +58,7 @@ public:
         for (int i = 0; i < n; ++i)
             dp[i][0] = 1; // empty subset always possible
         if (arr[0] == 0)
-            dp[0][0] = 2; // pick or not pick zero : picking and not picking are both valid : so 1 + 1 = 2;
+            dp[0][arr[0]] = 2; // pick or not pick zero : picking and not picking are both valid : so 1 + 1 = 2;
         else if (arr[0] <= target)
             dp[0][arr[0]] = 1;
 
@@ -90,7 +90,7 @@ public:
         // Base cases
         prev[0] = 1; // one way for sum = 0
         if (arr[0] == 0)
-            prev[0] = 2; // pick or not pick zero : picking and not picking are both valid : so 1 + 1 = 2;
+            prev[arr[0]] = 2; // pick or not pick zero : picking and not picking are both valid : so 1 + 1 = 2;
         else if (arr[0] <= target)
             prev[arr[0]] = 1;
 
