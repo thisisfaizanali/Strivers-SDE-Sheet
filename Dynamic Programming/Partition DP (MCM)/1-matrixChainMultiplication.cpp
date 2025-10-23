@@ -40,3 +40,38 @@ public:
         return solve(1, n - 1, arr, dp);
     }
 };
+
+// Tabulation:
+class Solution
+{
+public:
+    int matrixMultiplication(vector<int> &arr)
+    {
+        int n = arr.size(); // total number of dimensions (matrices = n - 1)
+
+        // dp[i][j] will store the minimum cost to multiply matrices from i to j
+        vector<vector<int>> dp(n + 1, vector<int>(n + 1, 1e9));
+
+        // Base case: cost of multiplying one matrix = 0
+        for (int i = 1; i < n; ++i)
+            dp[i][i] = 0;
+
+        // i goes backward so that dp[k+1][j] (right subproblem) is already computed
+        for (int i = n - 1; i >= 1; --i)
+        {
+            // j always starts after i:
+            for (int j = i + 1; j < n; ++j)
+            {
+                // try all possible partitions between i and j
+                for (int k = i; k < j; ++k)
+                {
+                    int operations = (arr[i - 1] * arr[k] * arr[j]) + dp[i][k] + dp[k + 1][j];
+                    dp[i][j] = min(dp[i][j], operations);
+                }
+            }
+        }
+
+        // final answer: minimum cost to multiply entire chain (1..n-1)
+        return dp[1][n - 1];
+    }
+};
