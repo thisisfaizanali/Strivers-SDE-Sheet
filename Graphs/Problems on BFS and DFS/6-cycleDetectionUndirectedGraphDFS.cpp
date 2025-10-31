@@ -5,7 +5,7 @@ using namespace std;
 /*
 GFG : Undirected Graph Cycle
 Approach : DFS
-Idea  :  A cycle exists in an undirected graph if during BFS, we revisit a previously
+Idea  :  A cycle exists in an undirected graph if during DFS, we revisit a previously
 visited node that is NOT the parent of the current node.
 Time Complexity:  O(V + E)
     - V is the number of vertices.
