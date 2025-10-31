@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Memoziation :
+// Memoization :
 class Solution
 {
 private:
